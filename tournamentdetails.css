@@ -1,0 +1,612 @@
+/* Base styles - converted from Tailwind */
+:root {
+  --esports-dark: #121212;
+  --esports-darker: #0A0A0A; 
+  --esports-card: #1E1E1E;
+  --esports-purple: #8B5CF6;
+  --esports-blue: #0EA5E9;
+  --esports-green: #10B981;
+  --esports-red: #EF4444;
+  --esports-yellow: #FBBF24;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--esports-dark);
+  color: white;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.aspect-ratio {
+  position: relative;
+  padding-top: 33.33%; /* 3:1 aspect ratio */
+}
+
+.cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--esports-dark), transparent);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 2rem;
+  }
+}
+
+.status-tags {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-right: 0.75rem;
+  background-color: var(--esports-blue);
+  color: white;
+}
+
+.status-badge.ongoing {
+  background-color: var(--esports-green);
+}
+
+.status-badge.completed {
+  background-color: var(--gray-700);
+}
+
+.game-type-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background-color: rgba(18, 18, 18, 0.8);
+  color: white;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.tournament-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .tournament-title {
+    font-size: 2.25rem;
+  }
+}
+
+.tournament-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+}
+
+.meta-label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* Content layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Main content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs */
+.tabs-nav {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--gray-800);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.25rem;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--gray-400);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  color: white;
+}
+
+.tab-button.active {
+  color: var(--esports-purple);
+  border-bottom: 2px solid var(--esports-purple);
+}
+
+.tab-content-container {
+  background-color: var(--esports-card);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-800);
+  box-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Content sections */
+.content-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.description {
+  color: var(--gray-300);
+  line-height: 1.625;
+}
+
+.sub-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.detail-card {
+  background-color: var(--esports-darker);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.detail-label {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.detail-value {
+  font-weight: 500;
+}
+
+/* Schedule tab */
+.schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: var(--esports-darker);
+  border-radius: 0.5rem;
+}
+
+.schedule-date {
+  background-color: rgba(139, 92, 246, 0.2);
+  color: var(--esports-purple);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.schedule-day {
+  display: block;
+  font-weight: 600;
+}
+
+.schedule-month {
+  display: block;
+  font-size: 0.875rem;
+}
+
+.schedule-details h3 {
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.schedule-time {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+}
+
+/* Rules tab */
+.rules-container {
+  background-color: var(--esports-darker);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.rules-text {
+  color: var(--gray-300);
+  white-space: pre-line;
+}
+
+/* Participants tab */
+.participants-container {
+  background-color: var(--esports-darker);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.participants-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.participants-count {
+  font-size: 1.125rem;
+}
+
+.current-participants {
+  color: var(--esports-purple);
+  font-weight: 600;
+}
+
+.progress-container {
+  width: 50%;
+  height: 0.5rem;
+  background-color: var(--gray-800);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--esports-purple);
+  transition: width 0.3s ease;
+}
+
+.participants-list-placeholder {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--gray-400);
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-card {
+  background-color: var(--esports-card);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-800);
+  box-shadow: 0 0 5px rgba(139, 92, 246, 0.5), 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.trophy-icon {
+  color: var(--esports-yellow);
+  margin-right: 0.5rem;
+}
+
+.countdown-container {
+  text-align: center;
+  background-color: var(--esports-darker);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.countdown-label {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  margin-bottom: 0.25rem;
+}
+
+.countdown-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--esports-purple);
+}
+
+.dates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.date-item {
+  text-align: center;
+}
+
+.date-label {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+  margin-bottom: 0.25rem;
+}
+
+.date-value {
+  font-weight: 500;
+}
+
+.prize-amount-container {
+  text-align: center;
+  background-color: var(--esports-darker);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.prize-amount {
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  color: var(--esports-yellow);
+}
+
+.prize-distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.prize-place {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.place-badge {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.first-place {
+  background-color: var(--esports-yellow);
+  color: var(--esports-dark);
+}
+
+.second-place {
+  background-color: #c0c0c0;
+  color: var(--esports-dark);
+}
+
+.third-place {
+  background-color: #cd7f32;
+  color: var(--esports-dark);
+}
+
+.place-name {
+  flex-grow: 1;
+}
+
+.place-prize {
+  font-weight: 500;
+  color: var(--esports-yellow);
+}
+
+.slots-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.slots-count {
+  font-size: 0.875rem;
+}
+
+.filled-slots {
+  color: var(--esports-purple);
+  font-weight: 600;
+}
+
+.slots-progress-container {
+  margin-bottom: 1.5rem;
+  height: 0.5rem;
+  background-color: var(--gray-800);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.slots-progress-bar {
+  height: 100%;
+  background-color: var(--esports-purple);
+  transition: width 0.3s ease;
+}
+
+.register-button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  cursor: pointer;
+  border: none;
+  background: linear-gradient(to right, var(--esports-purple), var(--esports-blue));
+  color: white;
+}
+
+.register-button:hover {
+  opacity: 0.9;
+}
+
+.register-button:disabled {
+  background: var(--gray-700);
+  color: var(--gray-400);
+  cursor: not-allowed;
+}
+
+.register-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.register-button.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  border: 2px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.entry-fee-display {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.entry-fee-value {
+  color: white;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.share-button {
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.share-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: white;
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.instagram {
+  background-color: #e4405f;
+}
+
+.link {
+  background-color: #666;
+}
+
+.share-button:hover {
+  opacity: 0.9;
+}
